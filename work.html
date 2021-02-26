@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModeLLand</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+  let clothes = [
+  {
+    "id": 1,
+    "category": "jeans",
+    "name": "Ripped jeans",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/11.jpg",
+    "size": "XL",
+    "color": "blue",
+    "price": 20.99
+  },
+  {
+    "id": 2,
+    "category": "jeans",
+    "name": "Boyfriend jeans",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/10.jpg",
+    "size": "S",
+    "color": "blue",
+    "price": 24.99
+  },
+  {
+    "id": 3,
+    "category": "shirts",
+    "name": "Ripped sweatshirt",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg",
+    "size": "XL",
+    "color": "white",
+    "price": 29.99
+  },
+  {
+    "id": 4,
+    "category": "jackets",
+    "name": "Denim Jacket",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg",
+    "size": "M",
+    "color": "grey",
+    "price": 40.99
+  },
+  {
+    "id": 5,
+    "category": "shirts",
+    "name": "Longsleeve",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg",
+    "size": "L",
+    "color": "black",
+    "price": 120.99
+  },
+  {
+    "id": 6,
+    "category": "jeans",
+    "name": "Ripped jeans",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/11.jpg",
+    "size": "XL",
+    "color": "blue",
+    "price": 20.99
+  },
+  {
+    "id": 7,
+    "category": "jeans",
+    "name": "Boyfriend jeans",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/10.jpg",
+    "size": "S",
+    "color": "blue",
+    "price": 24.99
+  },
+  {
+    "id": 8,
+    "category": "shirts",
+    "name": "Ripped sweatshirt",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg",
+    "size": "XL",
+    "color": "white",
+    "price": 29.99
+  },
+  {
+    "id": 9,
+    "category": "jackets",
+    "name": "Denim Jacket",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg",
+    "size": "M",
+    "color": "grey",
+    "price": 40.99
+  },
+  {
+    "id": 10,
+    "category": "shirts",
+    "name": "Longsleeve",
+    "image": "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg",
+    "size": "L",
+    "color": "black",
+    "price": 120.99
+  }
+];
+</script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">ModeLLand</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Clothes</a></li>
+        <li><a href="#">Shoes</a></li>
+        <li><a href="#">Accessoires</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner">
+    <div class="header">
+      <h1>Welcome</h1>
+      <p>To The Trendy World Of Shopping</p>
+    </div>
+  </div>
+  <div class="about">
+    <div class="content">
+      <div class="title">Welcome to ModeLLand</div>
+      <p>Here You can find all our products to sell , you can purchase them online or in our shop .</p>
+    </div>
+  </div>
+  <div id="prod-div">
+
+  </div>
+  <script type="text/javascript" src="products.js"></script>
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = () => {
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = () => {
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = () => {
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+ <!--clothes elements-->
+ <div class="clothes">
+ <script>
+   for(i =0;i < clothes.length;i++){
+    document.write('<h4>'+clothes[i].name+'</h4>')
+    document.write('<li>'+clothes[i].category+'</li>')
+    document.write('<li>'+clothes[i].size+'</li>')
+    document.write('<li>'+clothes[i].color+'</li>')
+    document.write('<li>'+clothes[i].price+'</li>')
+
+   } 
+ </script>
+ </div>
+  <!-- footer section start -->
+  <footer>
+    <span>Created By <a href="https://www.orendaje.com">Orenda Junior Company</a> | <span
+        class="far fa-copyright"></span> 2021 All rights reserved.</span>
+  </footer>
+
+</body>
+
+</html>
