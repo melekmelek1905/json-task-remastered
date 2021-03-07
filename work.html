@@ -6,8 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ModeLLand</title>
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="store.js" async></script>
   <script>
   let clothes = [
   {
@@ -113,10 +116,7 @@
           <i class="fas fa-times"></i>
         </div>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Clothes</a></li>
-        <li><a href="#">Shoes</a></li>
-        <li><a href="#">Accessoires</a></li>
+        <li><a href="C:\Users\msi\Desktop\Work\Tasks\Nouveau dossier\json-task-remastered\services.html">Services</a></li>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
@@ -167,25 +167,58 @@
  <!--clothes elements-->
  <div class="clothes">
  <script>
-   for(i =0;i < clothes.length;i++){
-    document.write('<h4>'+clothes[i].name+'</h4>')
+  function addItem(i){
+    document.write('<h4>'+clothes[i].name+'</h4>') 
     document.write('<li>'+clothes[i].category+'</li>')
     document.write('<li>'+clothes[i].size+'</li>')
     document.write('<li>'+clothes[i].color+'</li>')
     document.write('<li>'+clothes[i].price+'</li>')
     document.write('<li><img src='+clothes[i].image + ' class = "item_img"></li>')
-    document.write('<li><button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button></li>')
     document.write('<br>')
+    document.write('<li><button class="btn btn-primary shop-item-button2" type="button">Remove</button></li>')
+    document.write('<br>')
+    document.write('<hr>')
     document.write('<br>')
    } 
+   for(i=0;i<clothes.length;i++){
+     addItem(i);
+   }
  </script>
- </div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Contact us</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- footer section start -->
   <footer>
     <span>Created By <a href="https://www.orendaje.com">Orenda Junior Company</a> | <span
         class="far fa-copyright"></span> 2021 All rights reserved.</span>
   </footer>
-
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
 </html>
